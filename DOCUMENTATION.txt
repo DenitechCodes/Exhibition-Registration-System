@@ -1,0 +1,25 @@
+1. Input Validation
+Input validation ensures the user enters correct and complete information before it is saved to the database.
+
+a)Empty Fields Check
+Before performing insert or update operations, we check that all important text fields are not empty. This prevents incomplete data from being inserted, which protects data integrity in the database.
+
+b)Valid Email Format
+We validate the email using a regular expression.This ensures the email follows a correct structure like user@example.com, avoiding invalid or unusable entries.
+
+
+
+2. Ensuring Data Consistency Between GUI and Database
+Data consistency means that what the user sees on the form matches what is stored in the database.
+
+ a) Using PreparedStatement
+All database operations (insert, update, search, delete) use PreparedStatement, which binds exact values from GUI components.This ensures accurate and secure data transfer without SQL injection risks or formatting errors.
+
+b) Loading Data into GUI on Search
+When a record is retrieved, values from the database are displayed in the form fields.This keeps the GUI in sync with the latest data stored in the database.
+
+c) Image Path Consistency
+When a user uploads or searches for a participant:
+-The image path is saved or retrieved.
+-The image is displayed in the JLabel.
+This ensures visual consistency between stored image data and what's shown in the GUI.
